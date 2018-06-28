@@ -12,6 +12,7 @@ export class APIService {
   constructor(private httpClient: HttpClient) {}
 
   calculateLocation(payload){
+    console.log('api call ', `${this.API_URL}/ngc-calculator-api/calculations`, payload);
     return this.httpClient.post(`${this.API_URL}/ngc-calculator-api/calculations`, payload);
   }
 }

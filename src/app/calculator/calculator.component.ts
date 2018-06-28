@@ -16,7 +16,11 @@ export class Calculator implements OnInit {
   }
 
   public calculateLocation(){
-    this.apiService.calculateLocation({});
+    this.apiService
+      .calculateLocation({})
+      .subscribe((response) => {
+        console.log(response);
+      });
   }
 
 }
