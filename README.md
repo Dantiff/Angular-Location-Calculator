@@ -1,31 +1,21 @@
-# CRM App with Angular 6
+# Angular Location Calculator
 
-This is the front-end application for this [back-end](https://github.com/techiediaries/django-crm) built with Django.
+This is a one page calculator. The user would complete the three inputs at the top and receive calculations from an api on submit. 
 
-You can read this [tutorial](https://www.techiediaries.com/angular-tutorial) accompanying this repository for more information. 
+There is a mock data endpoint that you can use. It will respond to a POST request - https://technekes.mockable.io/ngc-calculator-api/calculations.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+### Develop
+Run 
+```
+yarn install && yarn start
+```
+And you will be good to go.
 
-## Development server
+### Deploy
+Run 
+```
+yarn build
+```
+And serve the built files to your preffered static site host.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Alternatively, you can access the live site <a href="http://ngc-angular-calculator.surge.sh/">here</a>.
