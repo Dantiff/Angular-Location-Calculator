@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { APIService } from '../api.service';
 
 @Component({
-  selector: 'app-account-list',
-  templateUrl: './account-list.component.html',
-  styleUrls: ['./account-list.component.css']
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
 })
 export class Calculator implements OnInit {
 
