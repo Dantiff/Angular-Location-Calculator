@@ -30,6 +30,4 @@ export class ContactCreateComponent implements OnInit {
       console.log(response);
     });
   };
-  }
-
 }
