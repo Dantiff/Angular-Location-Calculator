@@ -1,22 +1,8 @@
-
-<div class="nav-image w-100">
-	<img src="assets/img/c-header.png" alt="Angular Location Calculator" class="w-100" />
-</div>
-
-<a [routerLink]="'/accounts'"> Accounts </a>
-<a [routerLink]="'/create-account'"> Create Account </a>
-
-<a [routerLink]="'/contacts'"> Contacts </a>
-<a [routerLink]="'/create-contact'"> Create Contact </a>
-
-<a [routerLink]="'/leads'"> Leads </a>
-<a [routerLink]="'/create-lead'"> Create Lead </a>
-
-
-<a [routerLink]="'/opportunities'"> Opportunities </a>
-<a [routerLink]="'/create-opportunity'"> Create Opportunity </a>
-
-
-<div>
-    <router-outlet></router-outlet>
+<div class="ngc-app">
+	<div class="nav-image w-100">
+		<img src="assets/img/c-header.png" alt="Angular Location Calculator" class="w-100" />
+	</div>
+	<div>
+	    <router-outlet></router-outlet>
+	</div>
 </div>

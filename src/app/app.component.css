@@ -1,3 +1,9 @@
+.ngc-app {
+	background: #eceeee;
+	color: #f3f3f3;
+	min-height: 100vh;
+}
+
 .nav-image img {
 	max-height: 15vh;
 }

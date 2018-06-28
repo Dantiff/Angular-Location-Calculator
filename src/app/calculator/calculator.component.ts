@@ -7,16 +7,16 @@ import { APIService } from '../api.service';
   templateUrl: './account-list.component.html',
   styleUrls: ['./account-list.component.css']
 })
-export class AccountListComponent implements OnInit {
+export class Calculator implements OnInit {
 
   constructor(private apiService: APIService) { }
 
   ngOnInit() {
-    this.getAccounts();
+    this.calculateLocation();
   }
 
-  public getAccounts(){
-    this.apiService.getAccounts();
+  public calculateLocation(){
+    this.apiService.calculateLocation({});
   }
 
 }
