@@ -1,9 +1,55 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-12">
-			<div class="card shadow-none bg-white text-grey">
-				This is the form card
+<div class="container mt-5 calculator-index">
+	<div class="row px-3 location-row location-input">
+		<div class="col-xs-12 col-sm-3">
+			<div class="input-title">
+				<p class=""> Labor Type </p> 
+			</div>
+			<input 
+				type="checkbox" 
+				data-toggle="toggle" 
+				data-on="Union" 
+				data-off="Non-Union" 
+				data-style="ios" 
+				data-size="large"
+				ref="union_check"
+				[(ngModel)]="form.union_check"
+				checked="true"
+			/>
+		</div>
+		<div class="col-xs-12 col-sm-3">
+			<div class="input-title">
+				<p class=""> Zip Code (First 3 Digits): </p> 
+			</div>
+			<div class="input-group input-group-lg">
+			  <input 
+			  	type="text" 
+			  	name="location"
+			  	class="form-control" 
+			  	placeholder="" 
+			  	[(ngModel)]="form.location"
+			  />
 			</div>
 		</div>
-	</div>
+		<div class="col-xs-12 col-sm-3">
+			<div class="input-title">
+				<p class=""> Square Footage: </p> 
+			</div>
+			<div class="input-group input-group-lg">
+			  <input 
+			  	type="text" 
+			  	class="form-control" 
+			  	placeholder="" 
+			  	name="square_footage"
+			  	[(ngModel)]="form.square_footage"
+			  />
+			</div>
+		</div>
+		<div class="input-submit col-xs-12 col-sm-3">
+			<div class="btn-group btn-group-justified w-100" role="group" aria-label="...">
+				<button type="button" class="btn btn-primary btn-lg" (click)="calculateLocation(form);"> Calculate </button>
+			</div>
+			<div class="input-text">
+				<p> Location: National Avarage </p>
+			</div>
+		</div>
 </div>

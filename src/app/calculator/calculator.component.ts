@@ -9,15 +9,22 @@ import { APIService } from '../api.service';
 })
 export class Calculator implements OnInit {
 
+  public form = {
+    union_check: false,
+    location: '',
+    square_footage: '',
+    calculator_type: 'gold_bond',
+  };
+
   constructor(private apiService: APIService) { }
 
   ngOnInit() {
-    this.calculateLocation();
+    this.calculateLocation(this.form);
   }
 
-  public calculateLocation(){
+  public calculateLocation(form){
     this.apiService
-      .calculateLocation({})
+      .calculateLocation(form)
       .subscribe((response) => {
         console.log(response);
       });
