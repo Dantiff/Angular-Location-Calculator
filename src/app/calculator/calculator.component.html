@@ -1,5 +1,5 @@
-<div class="container mt-5 calculator-index">
-	<div class="row px-3 location-row location-input">
+<div class="container mt-5 mb-4 calculator-index">
+	<div class="row px-3 mb-4 bg-white location-row location-input">
 		<div class="col-xs-12 col-sm-3">
 			<div class="input-title">
 				<p class=""> Labor Type </p> 
@@ -52,4 +52,80 @@
 				<p> Location: National Avarage </p>
 			</div>
 		</div>
+	</div>
+
+	<div
+		*ngFor="let grid of grids; index as i; first as isFirst"
+		[ngClass]="{ 'row location-row location-grid pa-0': true, 'theme-red': isFirst, 'theme-gold': !isFirst}"
+	>
+		<div class="col-12 px-0">
+			<div class="grid-title">
+				<p class=""> Comparison #{{ i + 1 }}: GridMarX (12/12) vs Leading Competitor (8/12)</p> 
+			</div>
+		</div>
+		<div class="col-12 px-0">
+			<div class="grid-detail">
+				<p class=""> Overall Material and Labour Savings {{ grid.type }} </p> 
+			</div>
+		</div>
+		<div class="col-6 px-0">
+			<div class="grid-savings">
+				<p class="save"> Cost Savings </p> 
+				<p class="amount"> 84.6% </p> 
+			</div>
+		</div>
+		<div class="col-6 px-0">
+			<div class="grid-savings">
+				<p class="save"> % Savings </p> 
+				<p class="amount"> 25.5% </p> 
+			</div>
+		</div>
+
+		<div 
+			*ngFor="let unit of [1,2,3,4]; index as i; first as isFirst"
+			className="col-xs-12 col-sm-6 pa-0 grid-data">
+			<div 
+				*ngIf="grid.data.competitor"
+				className="grid-data-box">
+				<div className="data-title">
+					{{ transformData(unit, grid.data).title }}
+				</div>
+			  <div className="data-table">
+		      <Table>
+		      	<div className="row-title-one"> NGC GRidMax </div>
+		      	<div className="row-title-two"> COMPETITOR </div>
+		        <thead>
+		          <tr>
+		            <th>Labour Cost/SF</th>
+		            <th>Ext. Labour Cost</th>
+		          </tr>
+		        </thead>
+		        <tbody>
+		          <tr>
+		            <td> {{ transformData(unit, grid.data).ngc1 }} </td>
+		            <td> {{ transformData(unit, grid.data).ngc2 }} </td>
+		          </tr>
+		          <tr>
+		            <td> {{ transformData(unit, grid.data).cmp1 }} </td>
+		            <td> {{ transformData(unit, grid.data).cmp2 }} </td>
+		          </tr>
+		        </tbody>
+		      </Table>
+			  </div>
+				<div className="data-footer">
+					<p className="grid-detail ma-0">
+						Overall labour savings (% / cost)
+					</p>
+					<div className="d-flex">
+						<div className="grid-savings">
+							<p className="amount"> {{ transformData(unit, grid.data).save1 }} </p> 
+						</div>
+						<div className="grid-savings"> 
+							<p className="amount">  {{ transformData(unit, grid.data).cmp2 }} </p> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
