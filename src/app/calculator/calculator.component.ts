@@ -11,7 +11,7 @@ export class Calculator implements OnInit {
 
   public calculating:Boolean = false;
   public form = {
-    union_check: false,
+    union_check: true,
     location: '',
     square_footage: '',
     calculator_type: 'gold_bond',

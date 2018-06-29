@@ -13,7 +13,7 @@
 				data-size="large"
 				ref="union_check"
 				[(ngModel)]="form.union_check"
-				checked="true"
+				[ngClass]="{ 'toggle-on': form.union_check, 'toggle-off': !form.union_check }"
 			/>
 		</div>
 		<div class="col-xs-12 col-sm-3">
