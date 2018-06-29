@@ -33,13 +33,14 @@ export class Calculator implements OnInit {
       .calculateLocation(form)
       .subscribe((response) => {
         this.calculating = false;
-        console.log('the api response', this.calculating, response);
         this.grids.forEach(g => {
           switch (g.type) {
             case "Vertical":
+              // tslint:disable-next-line
               g.data = response.GoldBondCalculation.vertical;
               break;
             case "Horizontal":
+              // tslint:disable-next-line
               g.data = response.GoldBondCalculation.horizontal;
               break;            
             default:
