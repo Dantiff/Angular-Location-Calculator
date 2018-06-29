@@ -18,4 +18,4 @@ yarn build
 ```
 And serve the built files to your preffered static site host.
 
-Alternatively, you can access the live site <a href="http://ngc-angular-calculator.surge.sh/">here</a>.
+Alternatively, you can access the live site <a href="https://ngc-angular-calculator.surge.sh/">here</a>.
