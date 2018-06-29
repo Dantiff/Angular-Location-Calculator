@@ -29,18 +29,18 @@ export class Calculator implements OnInit {
 
   public calculateLocation(form){
     this.calculating = true;
+
+    /* tslint:disable */
     this.apiService
       .calculateLocation(form)
-      .subscribe((response) => {
+      .subscribe((response:any) => {
         this.calculating = false;
         this.grids.forEach(g => {
           switch (g.type) {
             case "Vertical":
-              // tslint:disable-next-line
               g.data = response.GoldBondCalculation.vertical;
               break;
             case "Horizontal":
-              // tslint:disable-next-line
               g.data = response.GoldBondCalculation.horizontal;
               break;            
             default:
@@ -99,7 +99,6 @@ export class Calculator implements OnInit {
       
       default:
         return {};
-        break;
     }
   }
 
