@@ -1,4 +1,4 @@
-<div class="container mt-5 mb-4 calculator-index">
+<div class="container pt-5 pb-4 calculator-index">
 	<div class="row px-3 mb-4 bg-white location-row location-input">
 		<div class="col-xs-12 col-sm-3">
 			<div class="input-title">
@@ -56,7 +56,7 @@
 
 	<div
 		*ngFor="let grid of grids; index as i; first as isFirst"
-		[ngClass]="{ 'row location-row location-grid pa-0': true, 'theme-red': isFirst, 'theme-gold': !isFirst}"
+		[ngClass]="{ 'row location-row location-grid px-0 shadow-sm': true, 'theme-red': isFirst, 'theme-gold': !isFirst}"
 	>
 		<div class="col-12 px-0">
 			<div class="grid-title">
@@ -81,19 +81,27 @@
 			</div>
 		</div>
 
+		<!-- Loading state -->
+		<div
+			*ngIf="calculating"
+			class="col-12 px-0 calculator-loader">
+			Loading...
+		</div>
+
+		<!-- Calculated data units -->
 		<div 
 			*ngFor="let unit of [1,2,3,4]; index as i; first as isFirst"
-			className="col-xs-12 col-sm-6 pa-0 grid-data">
+			class="col-xs-12 col-sm-6 px-0 grid-data">
 			<div 
-				*ngIf="grid.data.competitor"
-				className="grid-data-box">
-				<div className="data-title">
+				*ngIf="grid.data.competitor && !calculating"
+				class="card shadow-sm grid-data-box">
+				<div class="data-title">
 					{{ transformData(unit, grid.data).title }}
 				</div>
-			  <div className="data-table">
+			  <div class="mb-4 data-table">
 		      <Table>
-		      	<div className="row-title-one"> NGC GRidMax </div>
-		      	<div className="row-title-two"> COMPETITOR </div>
+		      	<div class="row-title-one"> NGC GRidMax </div>
+		      	<div class="row-title-two"> COMPETITOR </div>
 		        <thead>
 		          <tr>
 		            <th>Labour Cost/SF</th>
@@ -112,16 +120,16 @@
 		        </tbody>
 		      </Table>
 			  </div>
-				<div className="data-footer">
-					<p className="grid-detail ma-0">
+				<div class="data-footer">
+					<p class="grid-detail mb-0">
 						Overall labour savings (% / cost)
 					</p>
-					<div className="d-flex">
-						<div className="grid-savings">
-							<p className="amount"> {{ transformData(unit, grid.data).save1 }} </p> 
+					<div class="d-flex justify-content-between">
+						<div class="flex-grow-1 grid-savings">
+							<p class="amount"> {{ transformData(unit, grid.data).save1 }} </p> 
 						</div>
-						<div className="grid-savings"> 
-							<p className="amount">  {{ transformData(unit, grid.data).cmp2 }} </p> 
+						<div class="flex-grow-1 grid-savings"> 
+							<p class="amount">  {{ transformData(unit, grid.data).cmp2 }} </p> 
 						</div>
 					</div>
 				</div>

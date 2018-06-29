@@ -9,6 +9,7 @@ import { APIService } from '../api.service';
 })
 export class Calculator implements OnInit {
 
+  public calculating:Boolean = false;
   public form = {
     union_check: false,
     location: '',
@@ -27,10 +28,12 @@ export class Calculator implements OnInit {
   }
 
   public calculateLocation(form){
+    this.calculating = true;
     this.apiService
       .calculateLocation(form)
       .subscribe((response) => {
-        console.log('the api response', response);
+        this.calculating = false;
+        console.log('the api response', this.calculating, response);
         this.grids.forEach(g => {
           switch (g.type) {
             case "Vertical":
